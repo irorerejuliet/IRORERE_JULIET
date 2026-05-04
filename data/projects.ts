@@ -20,7 +20,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     image: "/images/t3rive.jpeg",
     link: "https://www.angycarehome.com/",
-    github: "https://github.com/myvamsnet/angy-care-provider-app.git",
+    
   },
   {
     id: "2",
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     tags: ["React", "TypeScript", "Tailwind CSS"],
     image: "/images/angy-care.jpeg",
     link: "https://www.angycarehome.com/",
-    github: "https://github.com/myvamsnet/angy-care-provider-app.git",
+    
   },
   {
     id: "3",
