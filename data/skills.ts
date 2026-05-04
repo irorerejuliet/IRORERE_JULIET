@@ -1,20 +1,12 @@
 export interface SkillCategory {
-  name: string
-  skills: string[]
+  name: string;
+  skills: string[];
 }
 
 export const skillCategories: SkillCategory[] = [
   {
     name: "Core Frontend",
-    skills: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "JSX",
-    ],
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS"],
   },
   {
     name: "Styling & Animation",
@@ -28,18 +20,26 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    name: "Tools & Platforms",
+    name: "Backend & APIs",
+    skills: [
+      "Supabase",
+      "REST API Integration",
+      "Authentication",
+      "Database Design",
+    ],
+  },
+  {
+    name: "Tools & Development",
     skills: [
       "Git",
       "GitHub",
       "VS Code",
-      "Figma",
+      "Postman",
       "Vercel",
-      "npm/pnpm",
-      "webpack",
+      "npm",
+      "pnpm",
       "Vite",
-      "ReactHook Form",
-      "Tanstack Query",
+      "Webpack",
     ],
   },
   {
@@ -48,9 +48,7 @@ export const skillCategories: SkillCategory[] = [
       "Responsive Design",
       "Accessibility (a11y)",
       "Component Design",
-      "User Experience",
       "Web Performance",
-      "Mobile-First",
     ],
   },
 ];
