@@ -12,6 +12,8 @@ export async function POST(req: Request) {
     const EMAIL_TO = process.env.EMAIL_TO;
     const EMAIL_FROM = process.env.EMAIL_FROM;
 
+    console.log("RAW ENV:", process.env.EMAIL_TO, process.env.EMAIL_FROM);
+
     if (!EMAIL_TO || !EMAIL_FROM) {
       console.error("ENV ISSUE:", { EMAIL_TO, EMAIL_FROM });
       throw new Error("Missing email configuration");
