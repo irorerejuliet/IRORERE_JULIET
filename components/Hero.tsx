@@ -31,7 +31,7 @@ export function Hero() {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center relative z-10"
       >
         {/* LEFT SIDE (TEXT) */}
-        <div className="text-left">
+        <div className="text-left order-2 md:order-1">
           {/* Badge */}
           <motion.div variants={fadeInUp} className="mb-8">
             <span className="inline-flex items-center gap-2 px-4 py-2 border border-accent/40 rounded-full text-accent text-xs font-mono font-semibold tracking-wider uppercase">
@@ -113,7 +113,7 @@ export function Hero() {
         {/* RIGHT SIDE (BIG IMAGE) */}
         <motion.div
           variants={fadeInUp}
-          className="relative w-full h-125 md:h-175"
+          className="relative w-full h-125 md:h-175 order-1 md:order-2"
         >
           <Image
             src="/images/juliet.jpg"

@@ -19,8 +19,7 @@ export const projects: Project[] = [
       "A modern e-commerce platform built with Next.js and TypeScript. Features include real-time inventory management, Stripe payment integration, user authentication, and a comprehensive admin dashboard for managing products and orders.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     image: "/images/t3rive.jpeg",
-    link: "https://www.angycarehome.com/",
-    
+    link: "https://www.3trive.com/",
   },
   {
     id: "2",
@@ -32,7 +31,6 @@ export const projects: Project[] = [
     tags: ["React", "TypeScript", "Tailwind CSS"],
     image: "/images/angy-care.jpeg",
     link: "https://www.angycarehome.com/",
-    
   },
   {
     id: "3",
@@ -58,10 +56,6 @@ export const projects: Project[] = [
     link: "https://example.com",
     github: "https://github.com/irorerejuliet/Exclusive-webapp.git",
   },
-  
-  
-  
- 
 ];
 
 export const categories = ['All', 'Next.js', 'React', 'TypeScript', 'Supabase', ]

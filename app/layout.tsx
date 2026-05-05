@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   creator: "Juliet",
   metadataBase: new URL("https://your-domain.com"),
   openGraph: {
-    title: "Juliet | Frontend Engineer",
+    title: "Juliet | Frontend Developer",
     description:
       "Frontend Developer building scalable, high-performance web applications with React, Next.js, and TypeScript.",
     url: "https://your-domain.com",
