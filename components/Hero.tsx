@@ -64,11 +64,11 @@ export function Hero() {
           {/* Buttons */}
           <motion.div
             variants={fadeInUp}
-            className="flex flex-col sm:flex-row gap-4 mb-16"
+            className="flex flex-row flex-wrap gap-4 mb-16"
           >
             <Link
               href="#projects"
-              className="group px-8 py-4 bg-accent text-accent-foreground font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl"
+              className="group px-6 sm:px-8 py-4 bg-accent text-accent-foreground font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl flex-1 sm:flex-none"
             >
               View Work
               <span className="group-hover:translate-x-1 transition-transform duration-200">
@@ -78,7 +78,7 @@ export function Hero() {
 
             <Link
               href="#contact"
-              className="px-8 py-4 border border-accent/50 text-foreground font-semibold rounded-lg hover:border-accent hover:bg-accent/5 transition-all duration-300"
+              className="px-6 sm:px-8 py-4 border border-accent/50 text-foreground font-semibold rounded-lg hover:border-accent hover:bg-accent/5 transition-all duration-300 flex items-center justify-center flex-1 sm:flex-none"
             >
               Contact Me
             </Link>
