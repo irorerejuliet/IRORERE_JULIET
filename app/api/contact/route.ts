@@ -8,25 +8,42 @@ export async function POST(req: Request) {
       throw new Error("Missing RESEND_API_KEY");
     }
 
+    
+    const EMAIL_TO = process.env.EMAIL_TO;
+    const EMAIL_FROM = process.env.EMAIL_FROM;
+
+    if (!EMAIL_TO || !EMAIL_FROM) {
+      console.error("ENV ISSUE:", { EMAIL_TO, EMAIL_FROM });
+      throw new Error("Missing email configuration");
+    }
+
     const resend = new Resend(apiKey);
 
     const { name, email, message } = await req.json();
 
-    const data = await resend.emails.send({
-      from: process.env.EMAIL_FROM!,
-      to: process.env.EMAIL_TO!,
+    const response = await resend.emails.send({
+      from: EMAIL_FROM,
+      to: EMAIL_TO,
       subject: `New message from ${name}`,
       replyTo: email,
       html: `
-    <h2>New Message</h2>
-    <p><b>Name:</b> ${name}</p>
-    <p><b>Email:</b> ${email}</p>
-    <p>${message}</p>
-  `,
+        <h2>New Message</h2>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p>${message}</p>
+      `,
     });
 
-    console.log("RESEND RESPONSE:", data);
-    return Response.json({ success: true, data });
+   
+    if (response.error) {
+      console.error(response.error);
+      return Response.json(
+        { success: false, error: response.error },
+        { status: 400 },
+      );
+    }
+
+    return Response.json({ success: true, data: response.data });
   } catch (error: any) {
     return Response.json(
       { success: false, error: error.message },
