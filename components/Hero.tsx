@@ -116,7 +116,7 @@ export function Hero() {
           className="relative w-full h-125 md:h-175 order-1 md:order-2"
         >
           <Image
-            src="/images/juliet.jpg"
+            src="/images/coperate.png"
             alt="Juliet portrait"
             fill
             priority
