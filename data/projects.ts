@@ -58,4 +58,4 @@ export const projects: Project[] = [
   },
 ];
 
-export const categories = ['All', 'Next.js', 'React', 'TypeScript', 'Supabase', ]
+export const categories = ['All', 'Next.js', 'React', 'TypeScript', 'Tailwind', 'Supabase', ]
