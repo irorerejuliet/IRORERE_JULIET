@@ -53,7 +53,7 @@ export const projects: Project[] = [
       "Responsive Design",
     ],
     image: "/images/exclusive-project.jpeg",
-    link: "https://example.com",
+    link: "https://exclusive-webapp.vercel.app/",
     github: "https://github.com/irorerejuliet/Exclusive-webapp.git",
   },
 ];
