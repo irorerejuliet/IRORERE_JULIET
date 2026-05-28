@@ -4,11 +4,12 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#contact', label: 'Contact', cta: true },
-]
+  { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
+  { href: "#experience", label: "Experience" },
+  { href: "#skills", label: "Skills" },
+  { href: "#contact", label: "Contact", cta: true },
+];
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -16,7 +17,14 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'projects', 'skills', 'contact']
+      const sections = [
+        "hero",
+        "about",
+        "projects",
+        "experience",
+        "skills",
+        "contact",
+      ];
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -24,7 +32,7 @@ export function Navigation() {
         if (element) {
           const { offsetTop, offsetHeight } = element
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(`#${section}`)
+           setActiveSection(section);
             break
           }
         }
@@ -39,7 +47,7 @@ export function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-lg"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,7 +63,7 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {navLinks.map((link) =>
               link.cta ? (
                 <motion.a
                   key={link.href}
@@ -70,7 +78,9 @@ export function Navigation() {
                   key={link.href}
                   href={link.href}
                   className={`text-sm font-medium transition-colors relative ${
-                    activeSection === link.href ? 'text-accent' : 'text-foreground/70 hover:text-foreground'
+                    activeSection === link.href.replace("#", "")
+                      ? "text-accent"
+                      : "text-foreground/70 hover:text-foreground"
                   }`}
                   whileHover={{ y: -2 }}
                 >
@@ -83,8 +93,8 @@ export function Navigation() {
                     />
                   )}
                 </motion.a>
-              )
-            ))}
+              ),
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -93,11 +103,26 @@ export function Navigation() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
@@ -116,9 +141,9 @@ export function Navigation() {
                 key={link.href}
                 href={link.href}
                 className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  activeSection === link.href
-                    ? 'bg-accent/10 text-accent'
-                    : 'text-foreground/70 hover:text-foreground'
+                  activeSection === link.href.replace("#", "")
+                    ? "bg-accent/10 text-accent"
+                    : "text-foreground/70 hover:text-foreground"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -129,5 +154,5 @@ export function Navigation() {
         )}
       </div>
     </motion.nav>
-  )
+  );
 }
