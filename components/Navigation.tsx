@@ -3,11 +3,13 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
+
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
+  { href: "/Juliet_Irorere_Resume.pdf", label: "Resume", external: true },
   { href: "#contact", label: "Contact", cta: true },
 ];
 
@@ -68,30 +70,19 @@ export function Navigation() {
                 <motion.a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-semibold px-6 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors"
-                  whileHover={{ scale: 1.05 }}
+                  className="text-sm font-semibold px-6 py-2 bg-accent text-accent-foreground rounded-lg"
                 >
-                  Let&apos;s Talk
+                  Let's Talk
                 </motion.a>
               ) : (
                 <motion.a
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors relative ${
-                    activeSection === link.href.replace("#", "")
-                      ? "text-accent"
-                      : "text-foreground/70 hover:text-foreground"
-                  }`}
-                  whileHover={{ y: -2 }}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
+                  className="text-sm font-medium"
                 >
                   {link.label}
-                  {activeSection === link.href && (
-                    <motion.div
-                      layoutId="underline"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent"
-                      transition={{ duration: 0.3 }}
-                    />
-                  )}
                 </motion.a>
               ),
             )}
