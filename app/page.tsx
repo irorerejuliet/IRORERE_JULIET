@@ -6,7 +6,7 @@ import { Skills } from '@/components/Skills'
 import { Contact } from '@/components/Contact'
 import { Footer } from '@/components/Footer'
 import Experience from '@/components/Experience'
-import WhatsAppWidget from '@/components/ui/WhatsAppWidget'
+import WhatsAppWidget from '@/components/WhatsAppWidget'
 
 export default function Home() {
   return (

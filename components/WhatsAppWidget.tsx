@@ -58,13 +58,15 @@ const WhatsAppWidget = () => {
         <div className="mb-4 w-72 rounded-2xl shadow-2xl bg-white overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
           {/* Header */}
           <div className="bg-green-500 text-white p-2 flex items-center gap-3">
-            <Image
-              src="/images/khenny3.jpeg"
-              alt="profile"
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
+            <div className="rounded-full">
+              <Image
+                src="/images/profile-img.jpeg"
+                alt="profile"
+                width={40}
+                height={40}
+                className="rounded-full"
+              />
+            </div>
 
             <div>
               <p className="font-semibold text-sm">Juliet</p>
